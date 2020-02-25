@@ -3,13 +3,13 @@ import java.time.DateTimeException;
 public class Controller {
     
     private TodoMatrix myMatrix;
-    private Validator validator;
+    private Validator myValidator;
     private View myView;
     
     public Controller() {
         myMatrix = new TodoMatrix();
         myView = new View();
-        validator = new Validator();
+        myValidator = new Validator();
 
         boolean isRunning = true;
         
@@ -30,18 +30,18 @@ public class Controller {
             } 
             else if (input.equals("1")) {
                 try {
-                    TodoItem temporaryItem = validator.getNewItemDetails();
+                    TodoItem temporaryItem = myValidator.getNewItemDetails();
                     myMatrix.addItem(temporaryItem.getTitle(), temporaryItem.getDeadline(), temporaryItem.getIsImportant());
                     myView.printMatrix(myMatrix);
                     myView.printMainMenu();
                 } catch (DateTimeException e) {
-                    myView.printMessage("qqq");
+                    myView.printMessage("There is no such date!");
                 } 
             } 
             else if (input.equals("2")) {
                 try {
-                    String quarterName = validator.getQuarterName(); 
-                    int index = validator.getIndex();
+                    String quarterName = myValidator.getQuarterName(); 
+                    int index = myValidator.getIndex();
                     myMatrix.markAsDone(quarterName, index);
                     myView.printMatrix(myMatrix);
                     myView.printMainMenu();

@@ -48,7 +48,7 @@ public class Validator {
         return Integer.parseInt(input);
     }
 
-    public boolean isInteger(String input) {
+    private boolean isInteger(String input) {
         try {
             Integer.parseInt(input);
             return true;

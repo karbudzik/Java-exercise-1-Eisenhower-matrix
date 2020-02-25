@@ -18,6 +18,7 @@ The main features of the program are:
 
 ## First approach to UML diagrams
 Preparing UML class diagrams were also part of Codecool workshops. Below is the first attempt to creating such diagram for this project:
+
 !["Project UML Diagram"](img/diagram.jpg)
 
 ## Technologies
